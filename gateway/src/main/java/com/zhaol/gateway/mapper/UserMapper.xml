@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fennel.gateway.mapper.UserMapper">
+<mapper namespace="com.zhaol.gateway.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.foxglove.gateway.entity.User">
+    <resultMap id="BaseResultMap" type="com.zhaol.gateway.entity.User">
         <id column="id" property="id" />
         <result column="openid" property="openid" />
         <result column="nick_name" property="nickName" />
