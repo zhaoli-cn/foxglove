@@ -1,5 +1,7 @@
 package com.zhaol.gateway.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,6 +18,9 @@ import java.util.Collection;
 @Data
 public class MyUser extends User {
 
+    @JsonSerialize(
+            using = ToStringSerializer.class
+    )
     private Long id;
     private String mobile;
     private String identity;

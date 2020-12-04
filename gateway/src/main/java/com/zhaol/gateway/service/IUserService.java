@@ -2,6 +2,8 @@ package com.zhaol.gateway.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zhaol.gateway.entity.User;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -13,6 +15,7 @@ import java.util.List;
  * @author 赵力
  * @since 2020-03-13
  */
+@CacheConfig(cacheNames = "USER")
 public interface IUserService extends IService<User> {
 
     /**
@@ -22,6 +25,7 @@ public interface IUserService extends IService<User> {
      * @author 赵力
      * @date 2020-03-13 10:45:40
      */
+    @Cacheable(value = "users",key = "#account")
     User getByAccount(String account);
 
     /**
@@ -31,5 +35,6 @@ public interface IUserService extends IService<User> {
      * @author 赵力
      * @date 2020-03-13 10:45:57
      */
+    @Cacheable(value = "roles",key = "#id")
     List<String> getUserRoles(Long id);
 }

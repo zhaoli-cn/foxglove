@@ -15,6 +15,7 @@ import java.util.concurrent.Callable;
  */
 public class CacheUtil {
 
+    /** 由采用的底层缓存来实现,此处采用redis缓存*/
     private static CacheManager cacheManager;
 
     public CacheUtil() {

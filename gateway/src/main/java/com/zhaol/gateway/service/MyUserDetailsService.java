@@ -45,8 +45,8 @@ public class MyUserDetailsService implements UserDetailsService {
                 }
             }
             // 通过用户名查询数据库获取加密后的密码
-            String password = passwordEncoder.encode(user.getPassword());
-            MyUser myUser = new MyUser(username,password,authorities,user.getId(),user.getIdentity(),user.getAccount(),user.getName(),user.getNickName(),user.getMobile());
+            // String password = passwordEncoder.encode(user.getPassword());
+            MyUser myUser = new MyUser(username,user.getPassword(),authorities,user.getId(),user.getIdentity(),user.getAccount(),user.getName(),user.getNickName(),user.getMobile());
             return myUser;
         }
     }

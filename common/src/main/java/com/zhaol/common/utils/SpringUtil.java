@@ -6,14 +6,16 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEvent;
+import org.springframework.stereotype.Component;
 
 /**
- * Spring Bean工具类
+ * Spring Bean工具类,启动类需要配置扫描到
  *
  * @version 1.0
  * @author: 赵力
  * @创建时间:2020/12/3 16:49
  */
+@Component
 public class SpringUtil implements ApplicationContextAware {
     private static final Logger log = LoggerFactory.getLogger(SpringUtil.class);
     private static ApplicationContext context;
@@ -23,7 +25,7 @@ public class SpringUtil implements ApplicationContextAware {
     
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        SpringUtil.context = context;
+        SpringUtil.context = applicationContext;
     }
     
     /**
