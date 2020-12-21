@@ -3,6 +3,7 @@ package com.zhaol.gateway.entity;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
@@ -16,6 +17,7 @@ import java.util.Collection;
  * @创建时间:2020/12/2 15:05
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class MyUser extends User {
 
     @JsonSerialize(

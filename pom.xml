@@ -22,13 +22,17 @@
         <commons-lang3.version>3.6</commons-lang3.version>
         <druid.version>1.1.20</druid.version>
         <swagger.version>2.5.0</swagger.version>
+        <swagger.model.version>1.5.20</swagger.model.version>
         <swagger.xiaoymin.version>1.7.2</swagger.xiaoymin.version>
         <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
         <jjwt.version>0.9.1</jjwt.version>
         <bouncycastle.version>1.64</bouncycastle.version>
+        <okhttp.version>3.14.5</okhttp.version>
+        <jsoup.version>1.12.1</jsoup.version>
     </properties>
 
     <modules>
+        <module>core-tool</module>
         <module>common</module>
         <module>gateway</module>
         <module>service</module>
@@ -40,6 +44,11 @@
             <dependency>
                 <groupId>com.zhaol</groupId>
                 <artifactId>common</artifactId>
+                <version>${zhaol.project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zhaol</groupId>
+                <artifactId>core-tool</artifactId>
                 <version>${zhaol.project.version}</version>
             </dependency>
             <dependency>
@@ -131,6 +140,11 @@
                 <version>${swagger.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-models</artifactId>
+                <version>${swagger.model.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
                 <version>${swagger.xiaoymin.version}</version>
@@ -165,6 +179,30 @@
                 <artifactId>bcprov-jdk15on</artifactId>
                 <version>${bouncycastle.version}</version>
             </dependency>
+            <!--http-->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+
+            <!-- protostuff -->
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>1.6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>io.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>1.6.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
